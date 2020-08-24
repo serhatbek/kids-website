@@ -116,6 +116,7 @@
     top: 0;
     right: 0;
     border: 0.3rem solid $color-cyan;
+    transition: all 0.5s 0.2s;
 
     &-content {
       width: 100%;
@@ -145,4 +146,17 @@
       border: 0.2rem solid $color-cyan;
     }
   }
+}
+
+.change.card .circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-color: transparentize($color-white, 0.1);
+}
+
+.change .circle-content {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.5s 0.7s;
 }
