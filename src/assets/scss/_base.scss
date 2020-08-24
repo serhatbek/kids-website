@@ -10,10 +10,10 @@ $color-gray: #555;
 
 /* MIXINS */
 
-@mixin flexLayout($justify: center) {
+@mixin flexLayout($justify: center, $align: center) {
   display: flex;
   justify-content: $justify;
-  align-items: center;
+  align-items: $align;
 }
 
 /* RESETS */
@@ -36,6 +36,41 @@ $color-gray: #555;
   font-weight: 400;
 }
 
+@mixin response($breakpoint) {
+  @if ($breakpoint == xl) {
+    @media (max-width: 1500px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == lg) {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == md) {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == sm) {
+    @media (max-width: 660px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint == xs) {
+    @media (max-width: 500px) {
+      @content;
+    }
+  }
+}
+
 html {
   font-size: 62.5%; /* This makes 1rem = 10px */
+
+  @include response(xs) {
+    font-size: 45%;
+  }
 }
