@@ -1,0 +1,41 @@
+/* VARIABLES */
+
+$color-cyan: #00ffff;
+$color-orange: #ff9910;
+$color-red: #d64161;
+$color-green: #47bb60;
+$color-white: #fff;
+$color-dark: #333;
+$color-gray: #555;
+
+/* MIXINS */
+
+@mixin flexLayout($justify: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+/* RESETS */
+
+%before-after {
+  content: attr(data-letter);
+  position: absolute;
+  left: 0;
+  transition: transform 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%; /* This makes 1rem = 10px */
+}
